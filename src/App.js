@@ -17,7 +17,7 @@ function App() {
       <div className="page" >
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/:id" component={Post} />
+          <Route path="/post/:postId" component={Post}/>
         </Switch>
       </div>
       <div style={{flex: 1}}></div>

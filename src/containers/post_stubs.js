@@ -12,9 +12,7 @@ export default function PostStubs(){
   ))
   return(
     <div>
-    <Router>
       {postsList}
-    </Router>
     </div>
   )
 }
