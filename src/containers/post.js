@@ -1,23 +1,26 @@
 import React from 'react'
 
 import {useParams,useRouteMatch} from 'react-router-dom'
-import {seed_posts} from "../data/seed"
+import {seedPosts, seedComments} from "../data/seed"
+import Comment from "./comment"
 
 
 export default function Post(){
-  console.log(useParams().postId);
   let {postId} = useParams();
   let id = "post-" + postId;
-  console.log(`id = ${id}`);
-
-  let postInfo = seed_posts.find( obj => obj.id === id)
+  let postInfo = seedPosts.find( obj => obj.id === id)
+  let postComments = seedComments.filter(obj => obj.commented_on === id)
+  console.log(postComments);
+  let comments = postComments.map(com => <div className="comment-indent">
+    <Comment {...com}/>
+  </div>)
   return(
     <div className="post">
       <p>id: {id}</p>
       <p>user: {postInfo.user}</p>
       <p>{postInfo.title}</p>
       <p>{postInfo.content}</p>
-
+      {comments}
     </div>
   )
 }
