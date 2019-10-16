@@ -1,22 +1,25 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
 }
 
-.App-link {
-  color: #09d3ac;
+.post-stub {
+  margin: 5px;
+  border: 1px dotted black;
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+}
+
+.post-stub-name {
+  border: 1px dotted green;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.post-stub-title {
+  border: 1px dotted green;
+  grid-column: 1 2;
+  grid-row: 2;
 }
