@@ -4,6 +4,10 @@
   flex-direction: row;
 }
 
+.page {
+  flex: 5;
+}
+
 .post-stub {
   margin: 5px;
   border: 1px dotted black;
@@ -22,4 +26,8 @@
   border: 1px dotted green;
   grid-column: 1 2;
   grid-row: 2;
+}
+
+.post {
+  border: 1px solid black;
 }
