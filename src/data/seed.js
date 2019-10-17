@@ -23,5 +23,7 @@ export const seedComments = [
   {id: "comment-7", commented_on: "comment-6", user: u3, content: faker.lorem.paragraph()},
   {id: "comment-8", commented_on: "comment-5", user: u4, content: faker.lorem.paragraph()},
   {id: "comment-9", commented_on: "comment-7", user: u4, content: faker.lorem.paragraph()},
-  {id: "comment-10", commented_on: "post-1", user: u4, content: faker.lorem.paragraph()}
+  {id: "comment-10", commented_on: "post-1", user: u4, content: faker.lorem.paragraph()},
+  {id: "comment-11", commented_on: "comment-6", user: u1, content: faker.lorem.paragraph()}
+
 ]
