@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import {seedComments} from "../data/seed"
 
 
 export default function Comment(props){
 
+  const [show, setShow] = useState(true);
+
   function handleClick (){
-    return false
+    if (show === true) {
+      setShow(false)
+    }else {
+      setShow(true)
+    }
   }
 
   let commentObjs = seedComments.filter(com => com.commented_on === props.id)
@@ -20,7 +26,7 @@ export default function Comment(props){
       <p>id: {props.id}</p>
       <p>user: {props.user}</p>
       <p>{props.content}</p>
-      {comments}
+      {show ? comments : <div className="closed-comment" onClick={handleClick}> . . . </div>}
     </div>
   )
 }

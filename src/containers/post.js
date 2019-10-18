@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import {useParams,useRouteMatch} from 'react-router-dom'
 import {seedPosts, seedComments} from "../data/seed"
@@ -7,15 +7,20 @@ import Comment from "./comment"
 
 export default function Post(){
 
+  const [show, setShow] = useState(true);
+
   function handleClick (){
-    return false
+    if (show === true) {
+      setShow(false)
+    }else {
+      setShow(true)
+    }
   }
-  
+
   let {postId} = useParams();
   let id = "post-" + postId;
   let postInfo = seedPosts.find( obj => obj.id === id)
   let postComments = seedComments.filter(obj => obj.commented_on === id)
-  console.log(postComments);
   let comments = postComments.map(com =>
     <div className="comment-container">
       <div className="comment-show-bar" onClick={handleClick}></div>
@@ -27,7 +32,7 @@ export default function Post(){
       <p>user: {postInfo.user}</p>
       <p>{postInfo.title}</p>
       <p>{postInfo.content}</p>
-      {comments}
+      {show ? comments : <div className="closed-comment" onClick={handleClick}> . . . </div>}
     </div>
   )
 }

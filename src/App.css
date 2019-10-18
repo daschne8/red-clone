@@ -43,3 +43,7 @@
   width: 15px;
   margin: 4px;
 }
+
+.closed-comment {
+  background: gray;
+}
