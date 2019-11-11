@@ -22,10 +22,8 @@ export default function Post(){
   let postInfo = seedPosts.find( obj => obj.id === id)
   let postComments = seedComments.filter(obj => obj.commented_on === id)
   let comments = postComments.map(com =>
-    <div className="comment-container">
-      <div className="comment-show-bar" onClick={handleClick}></div>
       <Comment {...com} />
-    </div>)
+    )
   return(
     <div className="post">
       <p>id: {id}</p>

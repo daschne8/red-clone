@@ -17,16 +17,24 @@ export default function Comment(props){
 
   let commentObjs = seedComments.filter(com => com.commented_on === props.id)
   let comments = commentObjs.map(com =>
-    <div className="comment-container">
-      <div className="comment-show-bar" onClick={handleClick}></div>
       <Comment {...com} />
-    </div>)
-  return(
-    <div className="post">
-      <p>id: {props.id}</p>
-      <p>user: {props.user}</p>
-      <p>{props.content}</p>
-      {show ? comments : <div className="closed-comment" onClick={handleClick}> . . . </div>}
-    </div>
-  )
+    )
+  let comment = ""
+
+    if (show) {
+      return(
+        <div className="comment-container">
+          <div className="comment-show-bar" onClick={handleClick}></div>
+          <div classname="comment-info">
+            <p>id: {props.id}</p>
+            <p>user: {props.user}</p>
+            <p>{props.content}</p>
+            {comments}
+          </div>
+        </div>
+        )
+    } else {
+      return(
+        <div className="closed-comment" onClick={handleClick}> . . . </div>)
+    }
 }
