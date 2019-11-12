@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import {useParams} from 'react-router-dom'
+import {useParams, NavLink} from 'react-router-dom'
 import {seedPosts, seedComments} from "../data/seed"
 import Comment from "./comment"
 
@@ -8,14 +8,6 @@ import Comment from "./comment"
 export default function Post(){
 
   const [show, setShow] = useState(true);
-
-  function handleClick (){
-    if (show === true) {
-      setShow(false)
-    }else {
-      setShow(true)
-    }
-  }
 
   let {postId} = useParams();
   let id = "post-" + postId;
@@ -26,11 +18,15 @@ export default function Post(){
     )
   return(
     <div className="post">
-      <p>id: {id}</p>
-      <p>user: {postInfo.user}</p>
+      <div className="post-info-top">
+        <p>id: {id}</p>
+        <p>posted by</p>
+        <NavLink to={`/user/${postInfo.user}`} className="comment-user">{postInfo.user}</NavLink>
+        <p> hours ago</p>
+      </div>
       <p>{postInfo.title}</p>
       <p>{postInfo.content}</p>
-      {show ? comments : <div className="closed-comment" onClick={handleClick}> . . . </div>}
+      {comments}
     </div>
   )
 }

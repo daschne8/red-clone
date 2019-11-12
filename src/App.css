@@ -10,32 +10,43 @@
 
 .post-stub {
   margin: 5px;
-  border: 1px dotted black;
   display: grid;
   grid-template-columns: 2;
   grid-template-rows: 2;
+  border: 1px dotted black;
 }
 
 .post-stub-name {
-  border: 1px dotted green;
   grid-column: 2;
   grid-row: 1;
+  border: 1px dotted green;
 }
 
 .post-stub-title {
-  border: 1px dotted green;
   grid-column: 1 2;
   grid-row: 2;
+  border: 1px dotted green;
 }
 
 .post {
-  border: 1px solid black;
+}
+
+.post-info-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.post-info-top p {
+  font-size: smaller;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .comment-container {
   display: flex;
   flex-direction: row;
-
 }
 
 .comment-show-bar {
@@ -46,4 +57,18 @@
 
 .closed-comment {
   background: gray;
+  border-radius: 10px;
+}
+
+.comment-info-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.comment-info-top p {
+  font-size: smaller;
+  margin-left: 3px;
+  margin-right: 3px;
 }

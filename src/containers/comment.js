@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {NavLink} from 'react-router-dom'
 
 import {seedComments} from "../data/seed"
 
@@ -26,9 +27,15 @@ export default function Comment(props){
         <div className="comment-container">
           <div className="comment-show-bar" onClick={handleClick}></div>
           <div classname="comment-info">
-            <p>id: {props.id}</p>
-            <p>user: {props.user}</p>
-            <p>{props.content}</p>
+            <div className="comment-info-top">
+              <NavLink to={`/user/${props.user}`} className="comment-user">{props.user}</NavLink>
+              <p className="comment-points"> points</p>
+               •
+              <p classname="comment-time-since">hours ago</p>
+               • 
+              <p className="comment-id">id: {props.id}</p>
+            </div>
+            <p className="comment-content">{props.content}</p>
             {comments}
           </div>
         </div>
