@@ -1,5 +1,6 @@
 let faker = require('faker')
 
+
 const u1 = "Daschne8"
 const u2 = "LongJohn"
 const u3 = faker.name.findName()
@@ -27,3 +28,10 @@ export const seedComments = [
   {id: "comment-11", commented_on: "comment-6", user: u1, content: faker.lorem.paragraph()}
 
 ]
+
+let user_1 = {name: u1, password: "password"}
+let user_2 = {name: u2, password: "password"}
+let user_3 = {name: u3, password: "password"}
+let user_4 = {name: u4, password: "password"}
+
+export const users = [user_1,user_2,user_3,user_4]

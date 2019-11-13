@@ -26,6 +26,7 @@ export default function Post(){
       </div>
       <p>{postInfo.title}</p>
       <p>{postInfo.content}</p>
+      <hr/>
       {comments}
     </div>
   )
